@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import static com.example.lab2a.Weapon.PAPER;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     int comScore = 0;
     Random rand = new Random();
 
-    public void onClickRock(){
+    public void onClickRock(View V){
         playerWeapon = ROCK;
         comChoice = rand.nextInt(numChoices);
 
@@ -62,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickPaper(){
+    public void onClickPaper(View V){
         playerWeapon = PAPER;
     }
 
-    public void onClickScissors(){
+    public void onClickScissors(View V){
         playerWeapon = SCISSORS;
     }
 }
