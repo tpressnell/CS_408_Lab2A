@@ -51,14 +51,34 @@ public class MainActivity extends AppCompatActivity {
 
         if(comWeapon == ROCK){
             TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + ROCK.toString());
+            computer.setText("Computer's Weapon: " + ROCK.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
             winMessage.setText("The Match is a draw!");
         }
         else if(comWeapon == PAPER){
+            ++comScore;
             TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + ROCK.toString());
+            computer.setText("Computer's Weapon: " + PAPER.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
             winMessage.setText("The Computer has won!");
         }
         else if(comWeapon == SCISSORS){
+            ++playerScore;
             TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + ROCK.toString());
+            computer.setText("Computer's Weapon: " + SCISSORS.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
             winMessage.setText("The Player has won!");
         }
     }
