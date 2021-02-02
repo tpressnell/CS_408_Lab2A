@@ -26,7 +26,7 @@
             android:id="@+id/choose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/please_chosse_your_weapon" />
+            android:text="@string/please_choose_your_weapon" />
 
         <Button
             android:id="@+id/rockButton"
@@ -39,12 +39,14 @@
             android:id="@+id/paperButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickPaper"
             android:text="@string/paper" />
 
         <Button
             android:id="@+id/scissorsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickScissors"
             android:text="@string/scissors" />
 
         <TextView

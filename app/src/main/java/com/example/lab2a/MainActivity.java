@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             player.setText("Player's Weapon: " + ROCK.toString());
             computer.setText("Computer's Weapon: " + ROCK.toString());
             scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
-            winMessage.setText("The Match is a draw!");
+            winMessage.setText("The match is a draw!");
         }
         else if(comWeapon == PAPER){
             ++comScore;
@@ -85,9 +85,101 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickPaper(View V){
         playerWeapon = PAPER;
+
+        comChoice = rand.nextInt(numChoices);
+
+        if(comChoice == 0){
+            comWeapon = ROCK;
+        }
+        else if(comChoice == 1){
+            comWeapon = PAPER;
+        }
+        else if(comChoice == 2){
+            comWeapon = SCISSORS;
+        }
+
+
+        if(comWeapon == ROCK){
+            ++playerScore;
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + PAPER.toString());
+            computer.setText("Computer's Weapon: " + ROCK.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The Player has won!");
+        }
+        else if(comWeapon == PAPER){
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + PAPER.toString());
+            computer.setText("Computer's Weapon: " + PAPER.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The match is a draw!");
+        }
+        else if(comWeapon == SCISSORS){
+            ++comScore;
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + PAPER.toString());
+            computer.setText("Computer's Weapon: " + SCISSORS.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The Computer has won!");
+        }
     }
 
     public void onClickScissors(View V){
         playerWeapon = SCISSORS;
+
+        comChoice = rand.nextInt(numChoices);
+
+        if(comChoice == 0){
+            comWeapon = ROCK;
+        }
+        else if(comChoice == 1){
+            comWeapon = PAPER;
+        }
+        else if(comChoice == 2){
+            comWeapon = SCISSORS;
+        }
+
+
+        if(comWeapon == ROCK){
+            ++comScore;
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + SCISSORS.toString());
+            computer.setText("Computer's Weapon: " + ROCK.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The Computer has won!");
+        }
+        else if(comWeapon == PAPER){
+            ++playerScore;
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + SCISSORS.toString());
+            computer.setText("Computer's Weapon: " + PAPER.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The Player has won!");
+        }
+        else if(comWeapon == SCISSORS){
+            TextView winMessage = (TextView) findViewById(R.id.winMessage);
+            TextView scoreCounter = (TextView) findViewById(R.id.scoreCounter);
+            TextView player = (TextView) findViewById(R.id.playerChoice);
+            TextView computer = (TextView) findViewById(R.id.comChoice);
+            player.setText("Player's Weapon: " + SCISSORS.toString());
+            computer.setText("Computer's Weapon: " + SCISSORS.toString());
+            scoreCounter.setText("Player: " + playerScore +", Computer: " + comScore);
+            winMessage.setText("The match is a draw!");
+        }
     }
 }
